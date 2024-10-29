@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/licznik"
+        android:layout_width="300dp"
+        android:layout_height="33dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Gra w kości. Autor: Jakub Krzeminski"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/buttonDisable"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="RZUĆ KOŚĆMI"
+        android:fontFamily="sans-serif"
+        android:textSize="30sp"
+        android:backgroundTint="@android:color/black" />
+    <TextView
+        android:id="@+id/kosc1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/kosc2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/kosc3"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/kosc4"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        />
+    <TextView
+        android:id="@+id/kosc5"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        />
+    <TextView
+        android:id="@+id/wyniklosowania"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        />
+    <TextView
+        android:id="@+id/wynikgry"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        />
+
+    <Button
+        android:id="@+id/wynikreset"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:backgroundTint="@android:color/black"
+        android:fontFamily="sans-serif"
+        android:text="RESETUJ WYNIK"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/liczbarzutow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        />
+
+
+</LinearLayout>

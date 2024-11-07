@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -61,27 +59,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void rollDice() {
         int[] diceValues = new int[5];
-        diceValues[0] = random.nextInt(6) + 1;
-        diceValues[1] = random.nextInt(6) + 1;
-        diceValues[2] = random.nextInt(6) + 1;
-        diceValues[3] = random.nextInt(6) + 1;
-        diceValues[4] = random.nextInt(6) + 1;
+        for (int i = 0; i < 5; i++) {
+            diceValues[i] = random.nextInt(6) + 1;
+        }
 
         displayDiceResults(diceValues);
 
         int currentRollResult = calculateRollResult(diceValues);
-        updateScore(currentRollResult);
-        updateRollCount();
+        gameResult += currentRollResult;
+        updateScore();
+        updateRollCount(currentRollResult);
     }
 
     private int calculateRollResult(int[] diceValues) {
         Map<Integer, Integer> counts = new HashMap<>();
         for (int value : diceValues) {
-            if (counts.containsKey(value)) {
-                counts.put(value, counts.get(value) + 1);
-            } else {
-                counts.put(value, 1);
-            }
+            counts.put(value, counts.getOrDefault(value, 0) + 1);
         }
 
         int sum = 0;
@@ -108,13 +101,13 @@ public class MainActivity extends AppCompatActivity {
         rollCountTextView.setText("Liczba rzutów: 0");
     }
 
-    private void updateScore(int newScore) {
-        gameResult += newScore;
+    private void updateScore() {
         gameResultLabel.setText("Wynik gry: " + gameResult);
     }
 
-    private void updateRollCount() {
+    private void updateRollCount(int rollResult) {
         rollCount++;
+        currentRollLabel.setText("Wynik tego losowania: " + rollResult);
         rollCountTextView.setText("Liczba rzutów: " + rollCount);
     }
 
